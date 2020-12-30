@@ -205,14 +205,19 @@
 				   <div>
             
             <b>Costo transferencia de Ether (1 gas)</b>
-            El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado por Ethereum para realizar transacciones o cualquier interacción dentro de la red <a href="https://www.miethereum.com/ether/gas/" target="_blank">Aprendé más aquí</a>
+            El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado por Ethereum para realizar transacciones o cualquier 
+	    interacción dentro de la red <a href="https://www.miethereum.com/ether/gas/" target="_blank">Aprendé más aquí</a>. 
+	    (El mínimo de gas limit para una transacción es de 21.000)
+	    
             <input type="text"
             name="gas" 
             defaultValue="this.state.gas"
             value={this.state.gas}
             onChange={this.myChangeHandler} className="form-control" />
 
-	    <b>Costo transferencia gas (Gwei) ( n * 10^-9 ETH ) | 1 Gwei = 0.000000001 ETH </b> Los valores estandar (42, 49, 58) los encuentras aquí <a href="https://ethgasstation.info/" target="_blank">Aprendé más sobre gas/Gwei</a>
+	    <b>Costo transferencia gas (Gwei) ( n * 10^-9 ETH ) | 1 Gwei = 0.000000001 ETH </b> Los valores estandar (42, 49, 58) 
+	    los encuentras aquí <a href="https://ethgasstation.info/" target="_blank">Aprendé más sobre gas/Gwei</a>
+	    
             <input type="text" 
             name="gwei" 
             defaultValue="this.state.gwei"
@@ -220,6 +225,7 @@
             onChange={this.myChangeHandler} className="form-control" />
 
 	    <b>Tarifa transacción (ETH) | (1 gas * n Gwei's)</b>
+	    
             <input type="text" 
             name="eth" 
             defaultValue={this.state.eth}
@@ -229,6 +235,7 @@
             disabled/>
 
             <b>Costo del ETH en $US | 1ETH = 743.89 $US</b>
+	    
             <input type="text" 
             name="costoeth" 
             defaultValue="this.state.costoeth"
@@ -238,6 +245,7 @@
             disabled/>
 
             <b>Tarifa transacción ($US) </b>
+	    
             <input type="text" 
             name="tarifaus" 
             defaultValue="this.state.tarifaus"
@@ -251,7 +259,8 @@
             defaultValue={item2.Current_state}
             onChange={this.myChangeHandler} className="form-control" />
 
-            <b>Tarifa Transacción ($COP)</b> 
+            <b>Tarifa Transacción ($COP)</b>
+	    
             <input type="text" 
             name="tarifacop" 
             defaultValue="this.state.tarifacop"
