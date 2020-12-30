@@ -196,28 +196,29 @@
 		  return (
 			<form style={formularioStyle} onSubmit={this.mySubmitHandler}>
 				<div className="form-group">
-				  <h3>Calcúla el costo de las transacciones en Ether</h3>
+				  <h3>Calcula el costo de las transacciones en la máquina virtual de Ethereum</h3>
 				  <hr />
-           Aquí puedes calcular los costos de las transacciones en Ethereum.
+           Aquí puedes calcular los costos y equivalencias en $US y $COP de las transacciones en Ethereum VM. <a href="https://ethereum.org/es/" target="_blank">Aprendé más sobre Ethereum</a><br>
 				   {acompagnante.map(item2 => (
          
 				   <div>
             
-            <b>Costo transferencia de Ether (gas)</b> 
+            <b>Costo transferencia de Ether (1 gas)</b><br>
+            El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado por Ethereum para realizar transacciones o cualquier interacción dentro de la red <a href="https://www.miethereum.com/ether/gas/" target="_blank">Aprendé más aquí</a>
             <input type="text"
             name="gas" 
             defaultValue="this.state.gas"
             value={this.state.gas}
             onChange={this.myChangeHandler} className="form-control" />
 
-					  <b>Costo del gas 42, 49, 58 Gwei ( n * 10^-9 ETH )</b> 
+	    <b>Costo transferencia gas (Gwei) ( n * 10^-9 ETH ) | 1 Gwei = 0.000000001 ETH </b> Los valores estandar (42, 49, 58) los encuentras aquí <a href="https://ethgasstation.info/" target="_blank">Aprendé más sobre gas/Gwei</a>
             <input type="text" 
             name="gwei" 
             defaultValue="this.state.gwei"
             value={this.state.gwei}
             onChange={this.myChangeHandler} className="form-control" />
 
-					  <b>Tarifa de transacción (ETH)</b>
+	    <b><span color="green">Tarifa transacción (ETH) </span> | (1 gas * n Gwei's)</b>
             <input type="text" 
             name="eth" 
             defaultValue={this.state.eth}
@@ -226,7 +227,7 @@
             style={totalStyle2}
             disabled/>
 
-            <b>Costo del ETH en $US</b>
+            <b>Costo del ETH en $US | 1ETH = 743.89 $US</b>
             <input type="text" 
             name="costoeth" 
             defaultValue="this.state.costoeth"
@@ -235,7 +236,7 @@
             className="form-control"
             disabled/>
 
-            <b>Tarifa transacción en $US </b>
+            <b><span color="green">Tarifa transacción ($US)</span> </b>
             <input type="text" 
             name="tarifaus" 
             defaultValue="this.state.tarifaus"
@@ -249,7 +250,7 @@
             defaultValue={item2.Current_state}
             onChange={this.myChangeHandler} className="form-control" />
 
-            <b>Tarifa Transacción en $COP</b> 
+            <b><span color="green">Tarifa Transacción ($COP)</span></b> 
             <input type="text" 
             name="tarifacop" 
             defaultValue="this.state.tarifacop"
