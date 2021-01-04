@@ -157,8 +157,8 @@
 	  /**/			gwei      : val,
           /**/     		eth       : this.state.gas*(val/1000000000),
           /**/    		costoeth  : this.state.costoeth,
-          /**/   		tarifaus  : ( this.state.gas*(val/1000000000) )*734.66,
-          /**/   		tarifacop : ( this.state.gas*(val/1000000000) )*734.66*3473
+          /**/   		tarifaus  : ( this.state.gas*(val/1000000000) )*this.state.costoeth,
+          /**/   		tarifacop : ( this.state.gas*(val/1000000000) )*this.state.costoeth*3473
 	  /**/		});
           /**/ 	}
           /**/
