@@ -30,7 +30,7 @@
   <script type="text/babel">	
    class ExternalData extends React.Component{ 
    
-          var today = new Date().toISOString().slice(0, 10);
+          const today = new Date().toISOString().slice(0, 10);
    
 	  state = {
 		  error     : null,
@@ -238,7 +238,7 @@
             style={totalStyle2}
             disabled/>
 
-            <b>Costo del ETH en $US {{this.state.hoy}}</b> 
+            <b>Costo del ETH en $US {this.state.hoy}</b> 
 	    
             <input type="text" 
             name="costoeth" 
