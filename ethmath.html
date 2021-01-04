@@ -28,30 +28,33 @@
 <body style="background: #eeeeee">
   <div id="container"></div>
   <script type="text/babel">
-  var today = new Date().toISOString().slice(0, 10);
-   class ExternalData extends React.Component{   
+  
+   var today = new Date().toISOString().slice(0, 10);
+   
+   class ExternalData extends React.Component{ 
+   
 	  state = {
-		  error     : null,
-		  isLoaded  : false,
-		  items  	  : [],
-      gas       : "21000",
-      gwei      : "",
-      eth       : "",
-      costoeth  : "1038.58",
-      tarifaus  : "",
-      tarifacop : "",
-      hoy     : today
-		  acompagnante : [{
-        "_id": "5e7c3b13c0c3bf0017b543e6",
-        "Price": "0",
-        "Current_state": "issued",
-        "PreviousHash": "0",
-        "Hash": "0",
-        "_createdOn": "2020-03-26T05:18:11.779Z"
-      }],
-      hash : "s8dfgs8d6gsdh3434343",
-		  id   : localStorage.getItem('id')
-	  };
+	  /**/   error     : null,
+	  /**/   isLoaded  : false,
+	  /**/   items     : [],
+      	  /**/   gas       : "21000",
+          /**/   gwei      : "",
+          /**/   eth       : "",
+          /**/   costoeth  : "1038.58",
+          /**/   tarifaus  : "",
+          /**/   tarifacop : "",
+          /**/   hoy       : today,
+	  /**/   acompagnante : [{
+          /**/      "_id"          : "5e7c3b13c0c3bf0017b543e6",
+          /**/      "Price"        : "0",
+          /**/      "Current_state": "issued",
+          /**/      "PreviousHash" : "0",
+          /**/      "Hash"         : "0",
+          /**/      "_createdOn"   : "2020-03-26T05:18:11.779Z"
+          /**/   }],
+          /**/   hash : "s8dfgs8d6gsdh3434343",
+	  /**/   id   : localStorage.getItem('id')
+	  }; 
   
 	  componentDidMount() {
 		  // carga datos del genesis block
