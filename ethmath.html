@@ -137,68 +137,71 @@
 		  ); */
 
 		 //window.location.replace("index5.html");
-      alert('Bloque emitido ok');
+                 alert('Bloque emitido ok');
 	  }
 
 	  myChangeHandler = (event) => {
-		  let nam = event.target.name;
-		  let val = event.target.value;
-	    var obj = this.state.referencevar[0];
-      if(nam == "gas"){
-        this.setState({
-			    gas: val
-			  });
-      }
-      if(nam == "gwei"){ 
-        this.setState({
-			    gwei      : val,
-          eth       : this.state.gas*(val/1000000000),
-          costoeth  : this.state.costoeth,
-          tarifaus  : ( this.state.gas*(val/1000000000) )*734.66,
-          tarifacop : ( this.state.gas*(val/1000000000) )*734.66*3473
-			  });
-      }
-
-      if(nam == "costoeth"){ 
-        this.setState({
-			    costoeth      : val,
-          tarifaus  : ( this.state.eth )*406,
-          tarifacop : ( this.state.eth )*406*3473
-			  });
-      }
-
-      Object.assign(obj, {[nam]: val});
-		  console.log(this.state.referencevar[0]);
+          /**/ 	let nam = event.target.name;
+	  /**/ 	let val = event.target.value;
+	  /**/	var obj = this.state.referencevar[0];
+	  /**/
+          /**/	if(nam == "gas"){
+          /**/  	this.setState({
+	  /**/   		gas: val
+	  /**/		});
+          /**/ 	}
+          /**/
+          /**/  if(nam == "gwei"){ 
+          /**/  	this.setState({
+	  /**/			gwei      : val,
+          /**/     		eth       : this.state.gas*(val/1000000000),
+          /**/    		costoeth  : this.state.costoeth,
+          /**/   		tarifaus  : ( this.state.gas*(val/1000000000) )*734.66,
+          /**/   		tarifacop : ( this.state.gas*(val/1000000000) )*734.66*3473
+	  /**/		});
+          /**/ 	}
+          /**/
+          /**/ 	if(nam == "costoeth"){ 
+          /**/ 		this.setState({
+	  /**/			costoeth  : val,
+          /**/       		tarifaus  : ( this.state.eth )*406,
+          /**/       		tarifacop : ( this.state.eth )*406*3473
+	  /**/		});
+          /**/ 	}
+          /**/
+          /**/ 	Object.assign(obj, {[nam]: val});
+          /**/ 	console.log(this.state.referencevar[0]);
 	  }
 	  
 	  render() {
-	    var formularioStyle = {
-		    padding: 23
-	    } 
-		  var buttonStyle = {
-		    padding: 15,
-		    width: "100%",
-		    marginBottom: 5
-	    }
-      var totalStyle = {
-		    background: '#b9f7b599',
-        fontWeight: "bold"
-	    }
-       var spanStyle = {
-		    color: 'green',
-        marginLeft: "5px"
-	    }
-      var totalStyle2 = {
-        background: '#d9e5f0',
-        fontWeight: "bold"
-      }
-		const { error, isLoaded, items, referencevar, hash } = this.state;
-		if (error) {
-		  return <div><h3>{this.state.id} error</h3></div>;
-		} else if (!isLoaded) {
-		  return <div>Loading...</div>;
-		} else {
-		  return (
+	  /**/  var formularioStyle = {
+	  /**/		padding: 23
+	  /**/  } 
+	  /**/	var buttonStyle = {
+	  /**/		padding: 15,
+	  /**/	    	width: "100%",
+	  /**/	    	marginBottom: 5
+	  /**/ 	}
+          /**/  var totalStyle = {
+	  /**/	    	background: '#b9f7b599',
+          /**/		fontWeight: "bold"
+	  /**/ 	}
+          /**/  var spanStyle = {
+	  /**/	    	color: 'green',
+          /**/		marginLeft: "5px"
+	  /**/ 	}
+          /**/	var totalStyle2 = {
+          /**/		background: '#d9e5f0',
+          /**/		fontWeight: "bold"
+      	  }
+	  
+	  const { error, isLoaded, items, referencevar, hash } = this.state;
+	  if (error) {
+		return <div><h3>{this.state.id} error</h3></div>;
+	  } else if (!isLoaded) {
+		return <div>Loading...</div>;
+	  } else {
+		return (
 			<form style={formularioStyle} onSubmit={this.mySubmitHandler}>
 				<div className="form-group">
 				  <h3>Calcula el costo de las transacciones en la máquina virtual de Ethereum</h3>
