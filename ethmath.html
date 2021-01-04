@@ -27,11 +27,9 @@
 
 <body style="background: #eeeeee">
   <div id="container"></div>
-  <script type="text/babel">	
-   class ExternalData extends React.Component{ 
-   
-          const today = new Date().toISOString().slice(0, 10);
-   
+  <script type="text/babel">
+  var today = new Date().toISOString().slice(0, 10);
+   class ExternalData extends React.Component{   
 	  state = {
 		  error     : null,
 		  isLoaded  : false,
