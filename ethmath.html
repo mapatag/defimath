@@ -56,6 +56,90 @@
 	  /**/   id   : localStorage.getItem('id')
 	  }; 
   
+          componentDidMount() {
+		  // carga datos del genesis block
+		  var id = Date.now();
+		  id     = id.toString();
+
+		  /*axios.get("https://jsonbox.io/box_5aaf51bfab38c88aba30").then(
+			result => {
+			result.data[0]._id = id;
+			console.log(result.data);
+			this.setState({
+			  isLoaded: true,
+			  referencevar : result.data
+			}); 
+			},
+			error => {
+			this.setState({
+			  isLoaded: true,
+			  error
+			});
+			}
+		  );*/
+
+		  var obj = this.state.referencevar[0]; // para agregar el form al state
+
+		   var ite = JSON.parse(localStorage.getItem("ite"));
+		   if(ite == null) ite = [];
+		   this.setState({
+			  isLoaded: true,
+			  items: ite // it
+			});  
+	  }
+
+	  mySubmitHandler = (event) => {
+		  event.preventDefault();
+		  var obj = this.state.referencevar[0];
+		  // coger el state actualizado con la lista remota desde el component did componentDidMount y agregarle el obj del formulario
+		  
+		  /*this.setState({
+			  isLoaded: true,
+			  items: obj
+			});*/  
+
+		  this.state.items.push( obj );
+		  /*this.setState({
+			  items: obj
+		  }); */
+
+		  /*var newJson =localStorage.getItem( 'ite' ); // obtenemos los usuarios lista
+		  var it = JSON.parse(newJson);
+		  it.push(iss);
+		  ct = JSON.stringify(it) */
+		  //localStorage.setItem('ites', ct);
+
+		  var ct = JSON.stringify(this.state.items);
+		  //localStorage.setItem('ites', ct);
+		  
+		  var ciphertext = CryptoJS.AES.encrypt(ct, 'secret key 123').toString();
+		  var ct = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(ciphertext));
+		  
+
+		  let nam = '_id';         let val  = ""; Object.assign(obj, {[nam]:  val}); // excluimos el _id del envío
+		  let nam2 = '_createdOn'; let val2 = ""; Object.assign(obj, {[nam2]: val2}); // excluimos el _createdOn del envío
+		  // crear el hash md5: 
+		  var concat = "";
+		  for (var prop in obj){
+					 if (obj.hasOwnProperty(prop)) {
+				  concat = concat + obj[prop];
+			  }
+		  } console.log(concat);
+		  this.state.referencevar[0].Hash = md5(concat);  
+
+		  const { Price, Current_state, PreviousHash, Hash} 
+		  = this.state.referencevar[0];
+		  
+		  // envía el issue a DB
+		  /*axios.post('https://jsonbox.io/box_b2b2fd0f29ec1858e194', 
+		  { Price, Current_state, PreviousHash, Hash })
+		  .then((result) => { alert("Paper emitido"); location.reload(); }
+		  ); */
+
+		 //window.location.replace("index5.html");
+                 alert('Bloque emitido ok');
+	  }
+
 	  
 	  myChangeHandler = (event) => {
           /**/ 	let nam = event.target.name;
