@@ -29,6 +29,9 @@
   <div id="container"></div>
   <script type="text/babel">	
    class ExternalData extends React.Component{ 
+   
+          var today = new Date().toISOString().slice(0, 10);
+   
 	  state = {
 		  error     : null,
 		  isLoaded  : false,
@@ -39,6 +42,7 @@
       costoeth  : "1038.58",
       tarifaus  : "",
       tarifacop : "",
+      hoy     : today
 		  acompagnante : [{
         "_id": "5e7c3b13c0c3bf0017b543e6",
         "Price": "0",
@@ -234,7 +238,7 @@
             style={totalStyle2}
             disabled/>
 
-            <b>Costo del ETH en $US </b>
+            <b>Costo del ETH en $US {this.state.hoy}</b> 
 	    
             <input type="text" 
             name="costoeth" 
