@@ -44,7 +44,7 @@
           /**/   tarifaus  : "",
           /**/   tarifacop : "",
           /**/   hoy       : today,
-	  /**/   acompagnante : [{
+	  /**/   referencevar : [{
           /**/      "_id"          : "5e7c3b13c0c3bf0017b543e6",
           /**/      "Price"        : "0",
           /**/      "Current_state": "issued",
@@ -67,7 +67,7 @@
 			console.log(result.data);
 			this.setState({
 			  isLoaded: true,
-			  acompagnante : result.data
+			  referencevar : result.data
 			}); 
 			},
 			error => {
@@ -78,7 +78,7 @@
 			}
 		  );*/
 
-		  var obj = this.state.acompagnante[0]; // para agregar el form al state
+		  var obj = this.state.referencevar[0]; // para agregar el form al state
 
 		   var ite = JSON.parse(localStorage.getItem("ite"));
 		   if(ite == null) ite = [];
@@ -90,7 +90,7 @@
 
 	  mySubmitHandler = (event) => {
 		  event.preventDefault();
-		  var obj = this.state.acompagnante[0];
+		  var obj = this.state.referencevar[0];
 		  // coger el state actualizado con la lista remota desde el component did componentDidMount y agregarle el obj del formulario
 		  
 		  /*this.setState({
@@ -125,10 +125,10 @@
 				  concat = concat + obj[prop];
 			  }
 		  } console.log(concat);
-		  this.state.acompagnante[0].Hash = md5(concat);  
+		  this.state.referencevar[0].Hash = md5(concat);  
 
 		  const { Price, Current_state, PreviousHash, Hash} 
-		  = this.state.acompagnante[0];
+		  = this.state.referencevar[0];
 		  
 		  // envía el issue a DB
 		  /*axios.post('https://jsonbox.io/box_b2b2fd0f29ec1858e194', 
@@ -143,7 +143,7 @@
 	  myChangeHandler = (event) => {
 		  let nam = event.target.name;
 		  let val = event.target.value;
-	    var obj = this.state.acompagnante[0];
+	    var obj = this.state.referencevar[0];
       if(nam == "gas"){
         this.setState({
 			    gas: val
@@ -168,7 +168,7 @@
       }
 
       Object.assign(obj, {[nam]: val});
-		  console.log(this.state.acompagnante[0]);
+		  console.log(this.state.referencevar[0]);
 	  }
 	  
 	  render() {
@@ -192,7 +192,7 @@
         background: '#d9e5f0',
         fontWeight: "bold"
       }
-		const { error, isLoaded, items, acompagnante, hash } = this.state;
+		const { error, isLoaded, items, referencevar, hash } = this.state;
 		if (error) {
 		  return <div><h3>{this.state.id} error</h3></div>;
 		} else if (!isLoaded) {
@@ -205,7 +205,7 @@
 				  <hr />
            Aquí puedes calcular los costos en ETH y equivalencias en $US y $COP de las transacciones en Ethereum VM.  
 	   <a href="https://ethereum.org/es/" target="_blank">Aprendé más sobre Ethereum</a><br/><br/>
-				   {acompagnante.map(item2 => (
+				   {referencevar.map(item2 => (
          
 				   <div>
             
