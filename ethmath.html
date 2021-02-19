@@ -195,6 +195,10 @@
           /**/		background: '#d9e5f0',
           /**/		fontWeight: "bold"
       	  /**/  }
+	  /**/  var totalStyle3 = {
+          /**/		background: '#f2f5bd99',
+          /**/		fontWeight: "bold"
+	  /**/  }
 	  /**/	var colStyle = {
           /**/		background: '',
           /**/
@@ -288,7 +292,8 @@
 			    name="costoeth" 
 			    defaultValue="this.state.costoeth"
 			    value={this.state.costoeth}
-			    onChange={this.myChangeHandler} 
+			    onChange={this.myChangeHandler}
+			    style={totalStyle}
 			    className="form-control"
 			    disabled/>
                      </div>
@@ -328,7 +333,7 @@
 			    defaultValue="this.state.tarifacop"
 			    value={this.state.tarifacop}
 			    onChange={this.myChangeHandler} className="form-control" 
-			    style={totalStyle} 
+			    style={totalStyle3} 
 			    disabled />
                      </div>
              </div>
