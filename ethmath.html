@@ -316,17 +316,26 @@
             defaultValue={item2.Current_state}
             onChange={this.myChangeHandler} className="form-control" />
 
-            <b>Tarifa Transacción ($COP)</b>
-	    
-            <input type="text" 
-            name="tarifacop" 
-            defaultValue="this.state.tarifacop"
-            value={this.state.tarifacop}
-            onChange={this.myChangeHandler} className="form-control" 
-            style={totalStyle} 
-            disabled />
-            
-				   </div>
+            <div class="row">
+	            <div class="col-sm-2" style={colStyle} ></div>
+		    <div class="col-sm-6" style={colStyle} >
+		            <hr/>
+            		    <b>Tarifa Transacción ($COP)</b>
+	            </div>
+		            <div class="col-sm-2" style={colStyleInput} >
+		    </div>
+		    <div class="col-sm-2" style={colStyleInput} >	    
+			    <input type="text" 
+			    name="tarifacop" 
+			    defaultValue="this.state.tarifacop"
+			    value={this.state.tarifacop}
+			    onChange={this.myChangeHandler} className="form-control" 
+			    style={totalStyle} 
+			    disabled />
+                     </div>
+             </div>
+				   
+	 </div>
        
 				  ))}
 				</div>
