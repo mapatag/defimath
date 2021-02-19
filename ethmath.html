@@ -217,6 +217,7 @@
          
 	    <div>
 	    <div class="row">
+	            <div class="col-sm-2" style={colStyle} ></div>
 		    <div class="col-sm-4" style={colStyle} >
 			    <b>Costo transferencia de Ether (1 gas)</b> El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado 
 			    por Ethereum para realizar transacciones o cualquier 
@@ -230,7 +231,8 @@
 			    defaultValue="this.state.gas"
 			    value={this.state.gas}
 			    onChange={this.myChangeHandler} className="form-control" />
-		    </div> 
+		    </div>
+		    <div class="col-sm-2" style={colStyle} ></div>
              </div>
 	    <b>Costo transferencia gas (Gwei) ( n * 10^-9 ETH ) | 1 Gwei = 0.000000001 ETH </b> Los valores estandar 42, 49, 58, etc. 
 	    los encuentras aquí <a href="https://ethgasstation.info/" target="_blank">Aprendé más sobre gas/Gwei</a> (para entenderlo fácilmente puede pensar en el
