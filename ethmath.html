@@ -38,7 +38,7 @@
 	  /**/   isLoaded  : false,
 	  /**/   items     : [],
       	  /**/   gas       : "21000",
-          /**/   gwei      : "42",
+          /**/   gwei      : "",
           /**/   eth       : "",
           /**/   costoeth  : "1967.00",
           /**/   tarifaus  : "",
@@ -61,6 +61,8 @@
 		  var id = Date.now();
 		  id     = id.toString();
 
+                  this.gwei.focus();
+		  
 		  /*axios.get("https://jsonbox.io/box_5aaf51bfab38c88aba30").then(
 			result => {
 			result.data[0]._id = id;
