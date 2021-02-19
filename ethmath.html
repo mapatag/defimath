@@ -294,15 +294,22 @@
                      </div>
              </div>
 
-            <b>Tarifa transacción ($US) </b>
-	    
-            <input type="text" 
-            name="tarifaus" 
-            defaultValue="this.state.tarifaus"
-            value={this.state.tarifaus}
-            onChange={this.myChangeHandler} className="form-control" 
-            style={totalStyle} 
-            disabled/>
+              <div class="row">
+	            <div class="col-sm-2" style={colStyle} ></div>
+		    <div class="col-sm-6" style={colStyle} >
+		            <hr/>
+            		    <b>Tarifa transacción ($US) </b>
+	            </div>
+		    <div class="col-sm-2" style={colStyleInput} > 
+			    <input type="text" 
+			    name="tarifaus" 
+			    defaultValue="this.state.tarifaus"
+			    value={this.state.tarifaus}
+			    onChange={this.myChangeHandler} className="form-control" 
+			    style={totalStyle} 
+			    disabled/>
+                   </div>
+             </div>
        
             <input type="hidden" 
             name="Current_state" 
