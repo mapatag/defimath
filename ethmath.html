@@ -231,7 +231,8 @@
 			    name="gas" 
 			    defaultValue="this.state.gas"
 			    value={this.state.gas}
-			    onChange={this.myChangeHandler} className="form-control" />
+			    onChange={this.myChangeHandler} className="form-control" 
+			    disabled/>
 		    </div>
 		    <div class="col-sm-2" style={colStyle} ></div>
              </div>
@@ -245,6 +246,7 @@
 			    Gwei como una relación entre la cantidad de galones y el tipo de combustible que se utiliza en los vehiculos: Diesel, gasolina corriente, extra, gas natural 
 			    y que proporciona mayor o menor potencia según el tipo de vehiculo, así 42 Gwei = 42 galones de combustible)
 	            </div>
+		    <br><br>
 		    <div class="col-sm-2" style={colStyle} >
 			    <input type="text" 
 			    name="gwei" 
@@ -260,6 +262,7 @@
 		            <hr/> 
 	    		    <b>Tarifa transacción (ETH) | (1 gas * n Gwei's)</b>
 	            </div>
+		    <br><br>
 		    <div class="col-sm-2" style={colStyle} >
 			    <input type="text" 
 			    name="eth" 
@@ -271,15 +274,23 @@
 		   </div>
              </div>
 	     
-            <b>Costo del ETH en $US {this.state.hoy}</b> 
-	    
-            <input type="text" 
-            name="costoeth" 
-            defaultValue="this.state.costoeth"
-            value={this.state.costoeth}
-            onChange={this.myChangeHandler} 
-            className="form-control"
-            disabled/>
+	      <div class="row">
+	            <div class="col-sm-2" style={colStyle} ></div>
+		    <div class="col-sm-6" style={colStyle} >
+		            <hr/> 
+            		    <b>Costo del ETH en $US {this.state.hoy}</b> 
+	            </div>
+		    <br><br>
+		    <div class="col-sm-2" style={colStyle} > 
+			    <input type="text" 
+			    name="costoeth" 
+			    defaultValue="this.state.costoeth"
+			    value={this.state.costoeth}
+			    onChange={this.myChangeHandler} 
+			    className="form-control"
+			    disabled/>
+                     </div>
+             </div>
 
             <b>Tarifa transacción ($US) </b>
 	    
