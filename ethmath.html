@@ -209,26 +209,29 @@
 		return (
 			<form style={formularioStyle} onSubmit={this.mySubmitHandler}>
 				<div className="form-group">
-				<div class="col-sm-4" style={colStyle} >.col-sm-4</div>
+				
 				  <h3> ⛽ Calcula el costo de gas en las transacciones de la máquina virtual de Ethereum ⬨</h3>
 				  <hr />
            Aquí puedes calcular los costos en ETH y equivalencias en $US y $COP de las transacciones en Ethereum VM. <a href="https://ethereum.org/es/" target="_blank">Aprendé más sobre Ethereum</a><br/><br/>
 				   {referencevar.map(item2 => (
          
-				   <div>
-            
-            <b>Costo transferencia de Ether (1 gas)</b> El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado 
-	    por Ethereum para realizar transacciones o cualquier 
-	    interacción dentro de la red <a href="https://www.miethereum.com/ether/gas/" target="_blank">Aprendé más aquí</a>. 
-	    (El mínimo de gas limit para una transacción es de 21.000, y se puede hacer la analogía de este concepto con la medida de combustible "Galón" para vehiculos
-	    de motor, así 1 gas = 1 galón)
-	    
-            <input type="text"
-            name="gas" 
-            defaultValue="this.state.gas"
-            value={this.state.gas}
-            onChange={this.myChangeHandler} className="form-control" />
-
+	    <div>
+	    <div class="row">
+		    <div class="col-sm-4" style={colStyle} >
+			    <b>Costo transferencia de Ether (1 gas)</b> El Gas en Ethereum es una unidad de medida utilizada para medir el trabajo realizado 
+			    por Ethereum para realizar transacciones o cualquier 
+			    interacción dentro de la red <a href="https://www.miethereum.com/ether/gas/" target="_blank">Aprendé más aquí</a>. 
+			    (El mínimo de gas limit para una transacción es de 21.000, y se puede hacer la analogía de este concepto con la medida de combustible "Galón" para vehiculos
+			    de motor, así 1 gas = 1 galón)
+		    </div>
+		    <div class="col-sm-4" style={colStyle} >
+			    <input type="text"
+			    name="gas" 
+			    defaultValue="this.state.gas"
+			    value={this.state.gas}
+			    onChange={this.myChangeHandler} className="form-control" />
+		    </div> 
+             </div>
 	    <b>Costo transferencia gas (Gwei) ( n * 10^-9 ETH ) | 1 Gwei = 0.000000001 ETH </b> Los valores estandar 42, 49, 58, etc. 
 	    los encuentras aquí <a href="https://ethgasstation.info/" target="_blank">Aprendé más sobre gas/Gwei</a> (para entenderlo fácilmente puede pensar en el
 	    Gwei como una relación entre la cantidad de galones y el tipo de combustible que se utiliza en los vehiculos: Diesel, gasolina corriente, extra, gas natural 
