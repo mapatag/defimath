@@ -200,7 +200,7 @@
           /**/
       	  /**/  }
 	  /**/  var colStyleInput = {
-	  /**/  	marginTop:15px;
+	  /**/  	marginTop: '15px';
 	  /**/  }
 	  
 	  const { error, isLoaded, items, referencevar, hash } = this.state;
@@ -250,7 +250,7 @@
 			    y que proporciona mayor o menor potencia según el tipo de vehiculo, así 42 Gwei = 42 galones de combustible)
 	            </div>
 		    <br/><br/>
-		    <div class="col-sm-2" style={colStyle} >
+		    <div class="col-sm-2" style={colStyleInput} >
 			    <input type="text" 
 			    name="gwei" 
 			    defaultValue="this.state.gwei"
@@ -266,7 +266,7 @@
 	    		    <b>Tarifa transacción (ETH) | (1 gas * n Gwei's)</b>
 	            </div>
 		    <br/><br/>
-		    <div class="col-sm-2" style={colStyle} >
+		    <div class="col-sm-2" style={colStyleInput} >
 			    <input type="text" 
 			    name="eth" 
 			    defaultValue={this.state.eth}
