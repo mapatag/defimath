@@ -196,9 +196,12 @@
           /**/		fontWeight: "bold"
       	  /**/  }
 	  /**/	var colStyle = {
-          /**/		background: '#cdaioa',
+          /**/		background: '',
           /**/
       	  /**/  }
+	  /**/  var colStyleInput = {
+	  /**/  	margin-top:15px;
+	  /**/  }
 	  
 	  const { error, isLoaded, items, referencevar, hash } = this.state;
 	  if (error) {
@@ -280,8 +283,7 @@
 		            <hr/> 
             		    <b>Costo del ETH en $US {this.state.hoy}</b> 
 	            </div>
-		    <br/><br/>
-		    <div class="col-sm-2" style={colStyle} > 
+		    <div class="col-sm-2" style={colStyleInput} > 
 			    <input type="text" 
 			    name="costoeth" 
 			    defaultValue="this.state.costoeth"
