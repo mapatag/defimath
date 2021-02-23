@@ -64,7 +64,7 @@
 		  axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum").then(
 			result => {
 			//result.data[0]._id = id;
-			console.log(result.data);
+			console.log(result.data.current_price);
 			/*this.setState({
 			  isLoaded: true,
 			  referencevar : result.data
