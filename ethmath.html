@@ -40,7 +40,7 @@
       	  /**/   gas       : "21000",
           /**/   gwei      : "",
           /**/   eth       : "",
-          /**/   costoeth  : "1967.00",
+          /**/   costoeth  : "",
           /**/   tarifaus  : "",
           /**/   tarifacop : "",
           /**/   hoy       : today,
@@ -63,12 +63,12 @@
 		  
 		  axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum").then(
 			result => {
-			//result.data[0]._id = id;
-			console.log(result.data[0].current_price);
-			/*this.setState({
-			  isLoaded: true,
-			  referencevar : result.data
-			}); */
+			   //result.data[0]._id = id;
+			   console.log(result.data[0].current_price);
+			   this.setState({
+			     isLoaded: true,
+			     costoeth : result.data[0].current_price
+			});
 			},
 			error => { console.log(error)
 			/*this.setState({
