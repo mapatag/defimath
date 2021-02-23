@@ -61,22 +61,22 @@
 		  var id = Date.now();
 		  id     = id.toString();
 		  
-		  /*axios.get("https://jsonbox.io/box_5aaf51bfab38c88aba30").then(
+		  axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum").then(
 			result => {
-			result.data[0]._id = id;
+			//result.data[0]._id = id;
 			console.log(result.data);
-			this.setState({
+			/*this.setState({
 			  isLoaded: true,
 			  referencevar : result.data
-			}); 
+			}); */
 			},
-			error => {
-			this.setState({
+			error => { console.log(error)
+			/*this.setState({
 			  isLoaded: true,
 			  error
-			});
+			});*/
 			}
-		  );*/
+		  );
 
 		  var obj = this.state.referencevar[0]; // para agregar el form al state
 
